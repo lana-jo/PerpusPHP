@@ -1,0 +1,212 @@
+* {
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+
+/*background body*/
+
+body {
+    background: url('../image/bg.jpg');
+    margin: 0;
+    background-size: cover;
+    /* Tambahkan baris berikut */
+}
+
+.container {
+    width: 1060px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: ;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px yellow;
+    color: white;
+}
+
+.sidebar {
+    width: 20%;
+    max-width: 100%;
+    float: left;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 0px 5px red;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidebar li a {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.sidebar li a:hover {
+    background-color: #ff7979;
+}
+
+.sidebar li a.active {
+    background-color: #ecf0f1;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-style: bold;
+}
+
+.content {
+    width: 80%;
+    min-height: 500px;
+    float: right;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 5px;
+    color: black;
+}
+
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+
+/*tabel*/
+
+table.data {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.data th {
+    padding: 10px 5px;
+}
+
+table.data td {
+    padding: 10px 5px;
+    border: 1px solid rgb(255, 255, 255);
+    border-left: none;
+    border-right: none;
+}
+
+table.data td a.link {
+    color: #3F27E6;
+    text-decoration: underline;
+}
+
+table.data td a.link:hover {
+    color: #347FF7;
+    text-decoration: underline;
+}
+
+table.data tr:hover:not(:first-child) {
+    background-color: #f5f5f5;
+}
+
+table.data tr:not(:first-child):nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+
+/*form/kotak login*/
+
+.form {
+    width: 450px;
+    height: 500px;
+    background: #fff;
+    border-radius: 20%;
+    padding: 4px 20px 15px 20px;
+    box-shadow: 0px 0px 5px blue;
+    margin: 0 auto;
+}
+
+input,
+textarea,
+select {
+    width: center;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    font-size: large;
+    box-shadow: 0px 0px 5px blue;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+.btn {
+    width: auto;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 1px;
+}
+
+table .btn {
+    font-size: 12px;
+}
+
+.btn-submit {
+    background-color: #C35045;
+}
+
+.btn-submit:hover {
+    background-color: #CA665C;
+}
+
+.btn-tambah {
+    background-color: #27ae60;
+}
+
+.btn-tambah-div {
+    text-align: right;
+    margin-right: 22px;
+}
+
+.btn-tambah:hover {
+    background-color: #2ecc71;
+}
+
+.btn-edit {
+    background-color: rgba(30, 115, 250, 0.57);
+}
+
+.btn-edit:hover {
+    background-color: #5DA7D8;
+}
+
+.btn-hapus {
+    background-color: #c0392b;
+}
+
+.btn-hapus:hover {
+    background-color: #c0392b;
+}
+
+.buku-cover {
+    max-width: 50px;
+}
+
+.cari-div {
+    text-align: left;
+    margin-left: 10px;
+    width: 70%;
+    height: 25%;
+}
+
+.btn-cari-div {
+    text-align: left;
+    margin-left: 10px;
+    width: 9%;
+    height: 10%;
+    font-size: 11pt;
+    font-style: bold;
+}
