@@ -49,7 +49,7 @@ include 'proses-list-kategori.php';
                     <p>Tidak ada data kategori.</p>
                 </div>
                 <?php else : ?>
-                <table class="data">
+                <table class="data" >
                     <thead>
                         <tr>
                             <th>Kategori</th>

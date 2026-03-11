@@ -18,7 +18,7 @@ if ($data_user != null) {
     // ... lanjut periksa password
 
     if ($password == $data_user['password']) {
-        $_SESSION['user'] = $data_user;
+        $_SESSION['user'] = $data_user["username"];
         header('Location: home.php');
     } else {
         header('Location: login.php');

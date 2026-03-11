@@ -12,7 +12,7 @@
     </div>
     <ul>
         <li>
-            <a href="./home.php">
+            <a href="../home.php">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -21,7 +21,7 @@
             </a>
         </li>
         <li>
-            <a href="./modul_kategori/list-kategori.php">
+            <a href="../modul_kategori/list-kategori.php">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                 </svg>
@@ -29,7 +29,7 @@
             </a>
         </li>
         <li>
-            <a href="./modul_buku/list-buku.php">
+            <a href="../modul_buku/list-buku.php">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
@@ -38,7 +38,7 @@
             </a>
         </li>
         <li>
-            <a href="./modul_anggota/list-anggota.php">
+            <a href="../modul_anggota/list-anggota.php">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                     <circle cx="9" cy="7" r="4"></circle>
@@ -49,7 +49,7 @@
             </a>
         </li>
         <li>
-            <a href="./modul_peminjaman/pinjam-data.php">
+            <a href="../modul_peminjaman/pinjam-data.php">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                     <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -60,7 +60,7 @@
             </a>
         </li>
         <li>
-            <a href="./modul_pengembalian/list-pengembalian.php">
+            <a href="../modul_pengembalian/list-pengembalian.php">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="9 11 12 14 22 4"></polyline>
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>

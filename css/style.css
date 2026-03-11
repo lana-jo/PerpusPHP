@@ -419,7 +419,7 @@ body {
 
 .sidebar li:last-child a:hover {
     background: rgba(239, 68, 68, 0.1);
-    color: var(--danger-400);
+    /*color: var(--danger-400);*/
     border-left-color: var(--danger-500);
 }
 
@@ -546,10 +546,13 @@ body {
 .search-btn:hover {
     background: var(--primary-600);
 }
-
 table.data {
     width: 100%;
     border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+    justify-content: space-between;
+
 }
 
 table.data th {
@@ -593,7 +596,7 @@ table.data td a.link:hover {
 /* Action buttons in table */
 .action-buttons {
     display: flex;
-    gap: 0.5rem;
+    justify-content: space-between;
 }
 
 /* Book cover thumbnail */
@@ -776,11 +779,11 @@ table.data td a.link:hover {
     .main-header {
         left: 0;
     }
-    
+    /*
     table.data {
         display: block;
         overflow-x: auto;
-    }
+    }*/
     
     .table-header {
         flex-direction: column;
