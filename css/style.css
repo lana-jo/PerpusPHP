@@ -419,7 +419,6 @@ body {
 
 .sidebar li:last-child a:hover {
     background: rgba(239, 68, 68, 0.1);
-    /*color: var(--danger-400);*/
     border-left-color: var(--danger-500);
 }
 
