@@ -496,6 +496,9 @@ body {
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid var(--gray-200);
     background: var(--gray-50);
+    flex-direction: column;
+    gap: 1rem;
+    /*align-items: stretch;*/
 }
 
 .table-title {
@@ -548,10 +551,6 @@ body {
 table.data {
     width: 100%;
     border-collapse: collapse;
-    display: block;
-    overflow-x: auto;
-    justify-content: space-between;
-
 }
 
 table.data th {
@@ -565,7 +564,17 @@ table.data th {
     color: var(--gray-500);
     border-bottom: 2px solid var(--gray-200);
 }
+table.data th:last-child,
+table.data td:last-child {
+    text-align: right;
+    width: 160px;
+}
 
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
 table.data td {
     padding: 1rem 1.25rem;
     border-bottom: 1px solid var(--gray-100);
@@ -593,10 +602,7 @@ table.data td a.link:hover {
 }
 
 /* Action buttons in table */
-.action-buttons {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 /* Book cover thumbnail */
 .buku-cover {
@@ -784,11 +790,11 @@ table.data td a.link:hover {
         overflow-x: auto;
     }*/
     
-    .table-header {
+  /*  .table-header {
         flex-direction: column;
         gap: 1rem;
         align-items: stretch;
-    }
+    }*/
     
     .search-input {
         width: 100%;
@@ -934,3 +940,5 @@ table.data td a.link:hover {
     color: var(--danger-600);
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
+
+

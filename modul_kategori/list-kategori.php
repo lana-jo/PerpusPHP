@@ -18,17 +18,17 @@ include 'proses-list-kategori.php';
 <body>
     <div class="container">
         <?php include '../sidebar.php' ?>
-        
+
         <main class="content">
             <header class="main-header">
                 <h1 class="header-title">Daftar Kategori</h1>
             </header>
-            
+
             <div class="content-header">
                 <h2 class="content-title">Manajemen Kategori Buku</h2>
                 <p class="content-subtitle">Kelola kategori koleksi perpustakaan</p>
             </div>
-            
+
             <div class="table-container">
                 <div class="table-header">
                     <span class="table-title">Total Kategori</span>
@@ -42,7 +42,7 @@ include 'proses-list-kategori.php';
                         </a>
                     </div>
                 </div>
-                
+
                 <?php if (empty($data_kategori)) : ?>
                 <div class="empty-state">
                     <div class="empty-state-icon">📁</div>
@@ -63,7 +63,7 @@ include 'proses-list-kategori.php';
                             <td>
                                 <div class="action-buttons">
                                     <a href="edit-kategori.php?id_kategori=<?php echo $kategori['kategori_id']; ?>" class="btn btn-edit">Edit</a>
-                                    <a href="delete-kategori.php?id_kategori=<?php echo $kategori['kategori_id']; ?>" class="btn btn-hapus" 
+                                    <a href="delete-kategori.php?id_kategori=<?php echo $kategori['kategori_id']; ?>" class="btn btn-hapus"
                                         onclick="return confirm('Anda yakin akan menghapus data?');">Hapus</a>
                                 </div>
                             </td>
