@@ -144,7 +144,7 @@ CREATE TABLE `pinjam` (
   `pinjam_id` int(10) NOT NULL,
   `buku_id` int(11) NOT NULL,
   `anggota_id` int(11) NOT NULL,
-  `tgl_pinjam` int(11) NOT NULL,
+  `tgl_pinjam` date NOT NULL,
   `tgl_jatuh_tempo` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
