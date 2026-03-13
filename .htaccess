@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /PerpusPHP/
+
+RewriteRule ^dashboard$ home.php [L]
+RewriteRule ^kategori$ modul_kategori/list-kategori.php [L]
+RewriteRule ^buku$ modul_buku/list-buku.php [L]
+RewriteRule ^anggota$ modul_anggota/list-anggota.php [L]
+RewriteRule ^peminjaman$ modul_peminjaman/pinjam-data.php [L]
+RewriteRule ^pengembalian$ modul_pengembalian/list-pengembalian.php [L]
+
+RewriteRule ^logout$ logout.php [L]
+RewriteRule ^login$ login.php [L]

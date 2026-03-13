@@ -3,6 +3,75 @@
    Design Year: 2025
    ============================================ */
 
+
+   /* --- Mobile topbar --- */
+.topbar-mobile {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    height: 52px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.topbar-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* --- Hamburger button --- */
+.hamburger-btn {
+    width: 36px; height: 36px;
+    background: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+.hamburger-btn span {
+    display: block;
+    width: 16px; height: 2px;
+    background: #374151;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+    transform-origin: center;
+}
+.hamburger-btn.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* --- Overlay --- */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 200;
+}
+.sidebar-overlay.visible { display: block; }
+
+/* --- Mobile sidebar --- */
+@media (max-width: 768px) {
+    .topbar-mobile { display: flex; }
+
+    .sidebar {
+        position: fixed;
+        top: 0; left: 0;
+        height: 100%;
+        z-index: 300;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    .sidebar.open { transform: translateX(0); }
+}
+   
 /* CSS Variables - Modern Design System */
 :root {
     /* Primary Colors */

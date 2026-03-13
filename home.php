@@ -34,6 +34,14 @@ $total_kembali = mysqli_fetch_assoc(mysqli_query($db, "SELECT COUNT(*) as total 
 
     <main class="content">
         <header class="main-header">
+            <!-- Mobile topbar (hidden on desktop) -->
+<div class="topbar-mobile">
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+    <span class="topbar-title">Perpustakaan</span>
+</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
             <h1 class="header-title">Dashboard</h1>
             <div class="header-user">
                 <div class="user-avatar">
@@ -125,6 +133,24 @@ $total_kembali = mysqli_fetch_assoc(mysqli_query($db, "SELECT COUNT(*) as total 
         </div>
     </main>
 </div>
+
+<script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+const sidebar = document.querySelector('.sidebar');
+const overlay = document.getElementById('sidebarOverlay');
+
+hamburgerBtn.addEventListener('click', () => {
+    const isOpen = sidebar.classList.toggle('open');
+    hamburgerBtn.classList.toggle('open', isOpen);
+    overlay.classList.toggle('visible', isOpen);
+});
+
+overlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    hamburgerBtn.classList.remove('open');
+    overlay.classList.remove('visible');
+});
+</script>
 </body>
 
 </html>
