@@ -932,3 +932,111 @@ table.data td a.link:hover {
     color: var(--danger-600);
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
+
+/* ── Hamburger button ───────────────────────────────────── */
+.hamburger-btn {
+    display: none !important; /* hidden on desktop */
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    color: #374151;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.hamburger-btn:hover {
+    background: #f3f4f6;
+}
+
+/* ── Sidebar close button (inside sidebar, mobile only) ─── */
+.sidebar-close {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    color: #fff;
+    margin-left: auto;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.sidebar-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Overlay backdrop ───────────────────────────────────── */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ── Mobile breakpoint ──────────────────────────────────── */
+@media (max-width: 768px) {
+
+    .hamburger-btn {
+        display: flex !important; /* force show on mobile */
+    }
+    /* Show hamburger & close buttons */
+    .sidebar-close  { display: flex!important; }
+
+    /* Sidebar brand: flex row to fit close button */
+    .sidebar-brand h2 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* Sidebar slides in from left, hidden by default */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 100;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Sidebar open state */
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Main content takes full width */
+    .container {
+        grid-template-columns: 1fr; /* or flex-direction: column if flex */
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    /* Header adjustments */
+    .main-header {
+        gap: 12px;
+    }
+
+    .header-title {
+        flex: 1;
+    }
+}
