@@ -2,7 +2,7 @@
 session_start();
 // ... jika belum login, alihkan ke halaman login
 if (! isset($_SESSION['user'])) {
-    header('Location: ../login.php');
+    header('Location: ../login');
     exit();
 }
 
@@ -26,7 +26,7 @@ if ($hasil == true) {
     // jika data berhasil diinsert, lakukan proses upload
     move_uploaded_file($file, $destination);
 
-    header('Location: list-buku.php');
+    header('Location: buku');
 } else {
-    header('Location: tambah-buku.php');
+    header('Location: tambah-buku');
 }

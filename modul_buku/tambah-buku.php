@@ -36,7 +36,7 @@ if (!isset($_SESSION['user'])) {
       
       <div class="form-card">
         <h3 class="form-title">Informasi Buku</h3>
-        <form method="post" action="proses-tambah-buku.php" enctype="multipart/form-data">
+        <form method="post" action="proses-tambah-buku" enctype="multipart/form-data">
           <div class="form-group">
             <label class="form-label" for="judul">Judul Buku</label>
             <input type="text" id="judul" name="judul" class="form-input" placeholder="Masukkan judul buku" required>
@@ -70,7 +70,7 @@ if (!isset($_SESSION['user'])) {
           </div>
           
           <div class="form-actions">
-            <a href="list-buku.php" class="btn" style="background: var(--gray-200); color: var(--gray-700);">Batal</a>
+            <a href="buku" class="btn" style="background: var(--gray-200); color: var(--gray-700);">Batal</a>
             <button type="submit" class="btn btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
