@@ -8,7 +8,7 @@ $query = "DELETE FROM buku WHERE buku_id = $id_buku";
 $hasil = mysqli_query($db, $query);
 
 if ($hasil == true) {
-    header('location: list-buku.php');
+    header('location: buku');
 } else {
-    header('location: tambah-buku.php');
+    header('location: tambah-buku');
 }

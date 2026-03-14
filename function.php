@@ -52,3 +52,9 @@ function tambah_stok($db, $buku_id)
     $q = "UPDATE buku SET buku_jumlah = buku_jumlah + 1 WHERE buku_id = $buku_id";
     mysqli_query($db, $q);
 }
+
+function total_anggota()
+{
+    mysqli_fetch_assoc(mysqli_query($db, "SELECT COUNT(*) as total FROM anggota"))['total'];
+
+}

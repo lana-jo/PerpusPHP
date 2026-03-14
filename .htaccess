@@ -1,12 +1,106 @@
+Options -Indexes
 RewriteEngine On
-RewriteBase /PerpusPHP/
 
-RewriteRule ^dashboard$ home.php [L]
-RewriteRule ^kategori$ modul_kategori/list-kategori.php [L]
-RewriteRule ^buku$ modul_buku/list-buku.php [L]
-RewriteRule ^anggota$ modul_anggota/list-anggota.php [L]
-RewriteRule ^peminjaman$ modul_peminjaman/pinjam-data.php [L]
-RewriteRule ^pengembalian$ modul_pengembalian/list-pengembalian.php [L]
+# ============================================================
+# BASE PATH — Uncomment & sesuaikan jika project ada di subfolder
+# Contoh: localhost/PerpusPHP/ → uncomment baris di bawah
+# ============================================================
+# RewriteBase /PerpusPHP/
 
-RewriteRule ^logout$ logout.php [L]
-RewriteRule ^login$ login.php [L]
+# ============================================================
+# BLOCK AKSES LANGSUNG KE FILE SENSITIF
+# ============================================================
+#RewriteRule ^connection\.php$   - [F,L]
+#RewriteRule ^function\.php$     - [F,L]
+#RewriteRule ^sidebar\.php$      - [F,L]
+#RewriteRule ^proses-login\.php$ - [F,L]
+
+# ============================================================
+# MODUL ANGGOTA
+# localhost/anggota            => modul_anggota/index.php
+# localhost/anggota/tambah     => modul_anggota/tambah.php
+# localhost/anggota/edit/5     => modul_anggota/edit.php?id=5
+# localhost/anggota/hapus/5    => modul_anggota/hapus.php?id=5
+# localhost/anggota/detail/5   => modul_anggota/detail.php?id=5
+# ============================================================
+RewriteRule ^anggota$                       modul_anggota/list-anggota.php          [L]
+RewriteRule ^tambah-anggota$                modul_anggota/tambah-anggota.php         [L]
+RewriteRule ^anggota/edit/([0-9]+)$         modul_anggota/edit.php?id=$1     [QSA,L]
+RewriteRule ^anggota/hapus/([0-9]+)$        modul_anggota/hapus.php?id=$1    [QSA,L]
+RewriteRule ^anggota/detail/([0-9]+)$       modul_anggota/detail.php?id=$1   [QSA,L]
+RewriteRule ^anggota/([a-z0-9_-]+)$         modul_anggota/$1.php             [L]
+
+# ============================================================
+# MODUL BUKU
+# localhost/buku               => modul_buku/index.php
+# localhost/buku/tambah        => modul_buku/tambah.php
+# localhost/buku/edit/5        => modul_buku/edit.php?id=5
+# localhost/buku/hapus/5       => modul_buku/hapus.php?id=5
+# localhost/buku/detail/5      => modul_buku/detail.php?id=5
+# ============================================================
+RewriteRule ^buku$                          modul_buku/list-buku.php             [L]
+RewriteRule ^tambah-buku$                   modul_buku/tambah-buku.php            [L]
+RewriteRule ^proses-tambah-buku$            modul_buku/proses-tambah-buku.php            [L]
+RewriteRule ^cover                          modul_buku/cover/
+RewriteRule ^edit-buku/([0-9]+)$            modul_buku/edit-buku.php?id_buku=$1    [QSA,L]
+RewriteRule ^hapus-buku/([0-9]+)$           modul_buku/delete-buku.php?id_buku=$1       [QSA,L]
+RewriteRule ^buku/detail/([0-9]+)$          modul_buku/detail.php?id=$1      [QSA,L]
+RewriteRule ^buku/([a-z0-9_-]+)$            modul_buku/$1.php                [L]
+
+# ============================================================
+# MODUL KATEGORI
+# localhost/kategori           => modul_kategori/index.php
+# localhost/kategori/tambah    => modul_kategori/tambah.php
+# localhost/kategori/edit/5    => modul_kategori/edit.php?id=5
+# localhost/kategori/hapus/5   => modul_kategori/hapus.php?id=5
+# ============================================================
+RewriteRule ^kategori$                      modul_kategori/list-kategori.php         [L]
+RewriteRule ^tambah-kategori$               modul_kategori/tambah-kategori.php        [L]
+RewriteRule ^kategori/edit/([0-9]+)$        modul_kategori/edit.php?id=$1    [QSA,L]
+RewriteRule ^kategori/hapus/([0-9]+)$       modul_kategori/hapus.php?id=$1   [QSA,L]
+RewriteRule ^kategori/([a-z0-9_-]+)$        modul_kategori/$1.php            [L]
+
+# ============================================================
+# MODUL PEMINJAMAN
+# localhost/peminjaman         => modul_peminjaman/index.php
+# localhost/peminjaman/tambah  => modul_peminjaman/tambah.php
+# localhost/peminjaman/edit/5  => modul_peminjaman/edit.php?id=5
+# localhost/peminjaman/hapus/5 => modul_peminjaman/hapus.php?id=5
+# ============================================================
+RewriteRule ^peminjaman$                    modul_peminjaman/index.php       [L]
+RewriteRule ^peminjaman/tambah$             modul_peminjaman/tambah.php      [L]
+RewriteRule ^peminjaman/edit/([0-9]+)$      modul_peminjaman/edit.php?id=$1  [QSA,L]
+RewriteRule ^peminjaman/hapus/([0-9]+)$     modul_peminjaman/hapus.php?id=$1 [QSA,L]
+RewriteRule ^peminjaman/([a-z0-9_-]+)$      modul_peminjaman/$1.php          [L]
+
+# ============================================================
+# MODUL PENGEMBALIAN
+# localhost/pengembalian         => modul_pengembalian/index.php
+# localhost/pengembalian/tambah  => modul_pengembalian/tambah.php
+# localhost/pengembalian/edit/5  => modul_pengembalian/edit.php?id=5
+# localhost/pengembalian/hapus/5 => modul_pengembalian/hapus.php?id=5
+# ============================================================
+RewriteRule ^pengembalian$                    modul_pengembalian/list-pengembalian.php       [L]
+RewriteRule ^pengembalian/tambah$             modul_pengembalian/tambah.php      [L]
+RewriteRule ^pengembalian/edit/([0-9]+)$      modul_pengembalian/edit.php?id=$1  [QSA,L]
+RewriteRule ^pengembalian/hapus/([0-9]+)$     modul_pengembalian/hapus.php?id=$1 [QSA,L]
+RewriteRule ^pengembalian/([a-z0-9_-]+)$      modul_pengembalian/$1.php          [L]
+
+# ============================================================
+# FILE ROOT — Halaman utama
+# localhost/login  => login.php
+# localhost/home   => home.php
+# localhost/logout => logout.php
+# ============================================================
+RewriteRule ^login$   login.php  [L]
+RewriteRule ^logout$  logout.php [L]
+RewriteRule ^dashboard$    home.php   [L]
+
+# ============================================================
+# FALLBACK — Hapus ekstensi .php untuk file root lainnya
+# localhost/namafile => namafile.php
+# ============================================================
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_URI}.php -f
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
