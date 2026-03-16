@@ -67,7 +67,7 @@ RewriteRule ^kategori/([a-z0-9_-]+)$        modul_kategori/$1.php            [L]
 # localhost/peminjaman/edit/5  => modul_peminjaman/edit.php?id=5
 # localhost/peminjaman/hapus/5 => modul_peminjaman/hapus.php?id=5
 # ============================================================
-RewriteRule ^peminjaman$                    modul_peminjaman/index.php       [L]
+RewriteRule ^peminjaman$                    modul_peminjaman/pinjam-data.php       [L]
 RewriteRule ^peminjaman/tambah$             modul_peminjaman/tambah.php      [L]
 RewriteRule ^peminjaman/edit/([0-9]+)$      modul_peminjaman/edit.php?id=$1  [QSA,L]
 RewriteRule ^peminjaman/hapus/([0-9]+)$     modul_peminjaman/hapus.php?id=$1 [QSA,L]
