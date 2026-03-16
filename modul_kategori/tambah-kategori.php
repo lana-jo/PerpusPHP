@@ -6,6 +6,16 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
+if (isset($_SESSION['error'])) {
+    echo '<div class="alert alert-danger">'.$_SESSION['error'].'</div>';
+    unset($_SESSION['error']); // hapus setelah ditampilkan
+}
+
+if (isset($_SESSION['success'])) {
+    echo '<div class="alert alert-success">'.$_SESSION['success'].'</div>';
+    unset($_SESSION['success']);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +46,7 @@ if (!isset($_SESSION['user'])) {
       
       <div class="form-card">
         <h3 class="form-title">Informasi Kategori</h3>
-        <form method="post" action="proses-tambah-kategori.php">
+        <form method="post" action="proses-tambah-kategori">
           <div class="form-group">
             <label class="form-label" for="kategori">Nama Kategori</label>
             <input type="text" id="kategori" name="kategori" class="form-input" placeholder="Masukkan nama kategori" required>

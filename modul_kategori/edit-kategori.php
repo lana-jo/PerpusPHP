@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
 include '../connection.php';
 
 // ambil artikel yang mau di edit
-$id_kategori = $_GET['id_kategori'];
+$id_kategori = $_GET['kategori_id'];
 $query = "SELECT * FROM kategori WHERE kategori_id = $id_kategori";
 $hasil = mysqli_query($db, $query);
 $data_kategori = mysqli_fetch_assoc($hasil);
@@ -41,7 +41,7 @@ $data_kategori = mysqli_fetch_assoc($hasil);
             
             <div class="form-card">
                 <h3 class="form-title">Informasi Kategori</h3>
-                <form method="post" action="proses-edit-kategori.php">
+                <form method="post" action="/proses-edit-kategori">
                     <input type="hidden" name="id_kategori" id="id_kategori" value="<?php echo $data_kategori['kategori_id']; ?>">
                     
                     <div class="form-group">
@@ -50,7 +50,10 @@ $data_kategori = mysqli_fetch_assoc($hasil);
                     </div>
                     
                     <div class="form-actions">
-                        <a href="list-kategori.php" class="btn" style="background: var(--gray-200); color: var(--gray-700);">Batal</a>
+                        <?php $base_url = "/"; ?>
+                        <a href="<?= $base_url ?>kategori" class="btn" style="background: var(--gray-200); color: var(--gray-700);">
+                            Batal
+                        </a>
                         <button type="submit" class="btn btn-primary">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>

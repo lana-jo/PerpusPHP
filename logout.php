@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function logout(string $redirectTo = 'login.php'): never
+function logout(string $redirectTo = 'login'): never
 {
     if (session_status() === PHP_SESSION_NONE) {
         session_start();

@@ -1,4 +1,4 @@
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
         <h2>
             <div class="sidebar-brand-icon">
@@ -9,10 +9,17 @@
             </div>
             Perpustakaan
         </h2>
+        <!-- Close button inside sidebar (mobile only) -->
+        <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
     </div>
     <ul>
         <li>
-            <a href="../home">
+            <a href="../dashboard">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -38,7 +45,7 @@
             </a>
         </li>
         <li>
-            <a href="../modul_anggota/list-anggota.php">
+            <a href="../anggota">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                     <circle cx="9" cy="7" r="4"></circle>
@@ -49,7 +56,7 @@
             </a>
         </li>
         <li>
-            <a href="../modul_peminjaman/pinjam-data.php">
+            <a href="../peminjaman">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                     <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -60,7 +67,7 @@
             </a>
         </li>
         <li>
-            <a href="../modul_pengembalian/list-pengembalian.php">
+            <a href="../pengembalian">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="9 11 12 14 22 4"></polyline>
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
@@ -81,3 +88,5 @@
     </ul>
 </aside>
 
+<!-- Overlay backdrop (mobile only) -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
