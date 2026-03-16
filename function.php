@@ -1,5 +1,6 @@
 <?php
 
+global $db;
 function ambil_kategori($db)
 {
     // ambil data kategori
@@ -52,9 +53,11 @@ function tambah_stok($db, $buku_id)
     $q = "UPDATE buku SET buku_jumlah = buku_jumlah + 1 WHERE buku_id = $buku_id";
     mysqli_query($db, $q);
 }
-
-function total_anggota()
-{
-    mysqli_fetch_assoc(mysqli_query($db, "SELECT COUNT(*) as total FROM anggota"))['total'];
-
+function countRecords($db, $table) {
+    $result = mysqli_query($db, "SELECT COUNT(*) as total FROM `$table`");
+    return mysqli_fetch_assoc($result)['total'];
 }
+
+$total_anggota = countRecords($db, 'anggota');
+$total_pinjam  = countRecords($db, 'pinjam');
+$total_kembali = countRecords($db, 'kembali');

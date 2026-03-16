@@ -2,6 +2,7 @@
 
 // ... ambil data dari database
 include 'proses-list-kategori.php';
+include '../function.php'
 
 ?>
 <!DOCTYPE html>
@@ -48,7 +49,7 @@ include 'proses-list-kategori.php';
 
             <div class="table-container">
                 <div class="table-header">
-                    <span class="table-title">Total Kategori</span>
+                    <span class="table-title">Total Kategori: <?= countRecords($db, 'kategori') ?></span>
                     <div class="table-actions">
                         <a href="tambah-kategori" class="btn btn-tambah">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -79,8 +80,8 @@ include 'proses-list-kategori.php';
                             <td><?php echo htmlspecialchars($kategori['kategori_nama']) ?></td>
                             <td>
                                 <div class="action-buttons">
-                                    <a href="edit-kategori.php?id_kategori=<?php echo $kategori['kategori_id']; ?>" class="btn btn-edit">Edit</a>
-                                    <a href="delete-kategori.php?id_kategori=<?php echo $kategori['kategori_id']; ?>" class="btn btn-hapus"
+                                    <a href="edit-kategori/<?php echo $kategori['kategori_id']; ?>" class="btn btn-edit">Edit</a>
+                                    <a href="hapus-kategori/<?php echo $kategori['kategori_id']; ?>" class="btn btn-hapus"
                                         onclick="return confirm('Anda yakin akan menghapus data?');">Hapus</a>
                                 </div>
                             </td>

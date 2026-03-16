@@ -19,11 +19,11 @@ if ($data_user != null) {
 
     if ($password == $data_user['password']) {
         $_SESSION['user'] = $data_user["username"];
-        header('Location: home.php');
+        header('Location: dashboard');
     } else {
-        header('Location: login.php');
+        header('Location: login');
     }
 } else {
-    header('Location: login.php');
+    header('Location: login');
 }
 ?>

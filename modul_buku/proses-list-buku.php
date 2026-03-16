@@ -21,7 +21,7 @@ include '../connection.php';
 
 $query = "SELECT buku.*, kategori.kategori_nama
     FROM buku
-    JOIN kategori
+    LEFT JOIN kategori
     ON buku.kategori_id = kategori.kategori_id";
 
 $hasil = mysqli_query($db, $query);

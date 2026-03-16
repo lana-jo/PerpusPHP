@@ -10,7 +10,7 @@ $query = "UPDATE kategori
 
 $hasil = mysqli_query($db, $query);
 if ($hasil == true) {
-    header('Location: list-kategori.php');
+    header('Location: /kategori');
 } else {
-    header('Location: tambah-kategori.php');
+    header('Location: edit-kategori/$id_kategori');
 }

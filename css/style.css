@@ -509,6 +509,7 @@ body {
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin-left: auto;
 }
 
 .search-box {
@@ -549,13 +550,16 @@ body {
 
 table.data {
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
     border-collapse: collapse;
 }
 
+
 table.data th {
     background: var(--gray-50);
+    text-align: start;
     padding: 1rem 1.25rem;
-    text-align: left;
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -569,6 +573,8 @@ table.data td {
     border-bottom: 1px solid var(--gray-100);
     color: var(--gray-700);
     font-size: 0.95rem;
+    text-align: start;
+    
 }
 
 table.data tr:hover {
@@ -760,6 +766,7 @@ table.data td a.link:hover {
 }
 
 @media (max-width: 768px) {
+
     .sidebar {
         transform: translateX(-100%);
         transition: transform var(--transition-slow);
@@ -783,7 +790,7 @@ table.data td a.link:hover {
     }
 
     .table-header {
-        flex-direction: column;
+        flex-direction: row;
         gap: 1rem;
         align-items: stretch;
     }

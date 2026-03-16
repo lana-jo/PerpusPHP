@@ -2,13 +2,14 @@
 
 include '../connection.php';
 
-$id_kategori = $_GET['id_kategori'];
+$id_kategori = $_GET['kategori_id'];
 
 $query = "DELETE FROM kategori WHERE kategori_id = $id_kategori";
 $hasil = mysqli_query($db, $query);
 
 if ($hasil == true) {
-    header('location: list-kategori.php');
+    header('location: /kategori');
 } else {
-    header('location: tambah-kategori.php');
+    header('location: tambah-kategori');
+    exit();
 }

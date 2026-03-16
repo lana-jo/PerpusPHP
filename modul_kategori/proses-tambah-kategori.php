@@ -1,21 +1,34 @@
 <?php
 session_start();
-// ... jika belum login, alihkan ke halaman login
-if (! isset($_SESSION['user'])) {
-    header('Location: ../login.php');
+
+// jika belum login, alihkan ke halaman login
+if (!isset($_SESSION['user'])) {
+    header('Location: ../login');
     exit();
 }
 
 include '../connection.php';
 
-$kategori = $_POST['kategori'];
+$kategori = mysqli_real_escape_string($db, trim($_POST['kategori']));
 
-$query = "INSERT INTO kategori (kategori_nama) 
-    VALUES ('$kategori')";
+// validasi sederhana
+if (empty($kategori)) {
+    $_SESSION['error'] = "Nama kategori tidak boleh kosong.";
+    header('Location: tambah-kategori');
+    exit();
+}
+
+// query insert
+$query = "INSERT INTO kategori (kategori_nama) VALUES ('$kategori')";
 $hasil = mysqli_query($db, $query);
 
-if ($hasil == true) {
-    header('Location: list-kategori.php');
+if ($hasil) {
+    $_SESSION['success'] = "Kategori berhasil ditambahkan.";
+    header('Location: kategori');
+    exit();
 } else {
-    header('Location: tambah-kategori.php');
+    // simpan error mysqli ke session
+    $_SESSION['error'] = "Gagal menambahkan kategori: " . mysqli_error($db);
+    header('Location: tambah-kategori');
+    exit();
 }
