@@ -121,7 +121,7 @@ include '../function.php'
                             <td>
                                 <div class="action-buttons">
                                     <a href="edit-buku/<?php echo $buku['buku_id']; ?>" class="btn btn-edit">Edit</a>
-                                    <a href="hapus-buku/<?php echo $buku['buku_id']; ?>" class="btn btn-hapus"
+                                    <a href="delete-buku/<?php echo $buku['buku_id']; ?>" class="btn btn-hapus"
                                        onclick="return confirm('Anda yakin akan menghapus data?');">Hapus</a>
                                 </div>
                             </td>

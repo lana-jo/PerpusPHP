@@ -89,8 +89,8 @@ include 'proses-list-anggota.php';
                             <td><?php echo htmlspecialchars($anggota['anggota_telp']) ?></td>
                             <td>
                                 <div class="action-buttons">
-                                    <a href="edit-anggota.php?id_anggota=<?php echo $anggota['anggota_id']; ?>" class="btn btn-edit">Edit</a>
-                                    <a href="delete-anggota.php?id_anggota=<?php echo $anggota['anggota_id']; ?>" class="btn btn-hapus" 
+                                    <a href="edit-anggota/<?php echo $anggota['anggota_id']; ?>" class="btn btn-edit">Edit</a>
+                                    <a href="hapus-anggota/<?php echo $anggota['anggota_id']; ?>" class="btn btn-hapus"
                                         onclick="return confirm('Anda yakin akan menghapus data?');">Hapus</a>
                                 </div>
                             </td>

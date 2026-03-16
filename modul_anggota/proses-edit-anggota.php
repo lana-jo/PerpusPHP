@@ -21,7 +21,7 @@ $query = "UPDATE anggota
 $hasil = mysqli_query($db, $query);
 // var_dump(mysqli_error($db));
 if ($hasil == true) {
-    header('Location: list-anggota.php');
+    header('Location: anggota');
 } else {
-    header('Location: tambah-anggota.php');
+    header('Location: edit-anggota');
 }

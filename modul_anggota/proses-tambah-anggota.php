@@ -18,7 +18,7 @@ $query = "INSERT INTO anggota (anggota_nama, anggota_alamat, anggota_jk, anggota
 $hasil = mysqli_query($db, $query);
 
 if ($hasil == true) {
-    header('Location: list-anggota.php');
+    header('Location: anggota');
 } else {
-    header('Location: tambah-anggota.php');
+    header('Location: tambah-anggota');
 }

@@ -7,7 +7,7 @@ if (!isset($_SESSION['user'])) {
 
 include '../connection.php';
 
-$id_buku = $_POST['id_buku'];
+$id_buku = $_POST['buku_id'];
 $judul = $_POST['judul'];
 $kategori = $_POST['kategori'];
 $deskripsi = $_POST['deskripsi'];
@@ -19,8 +19,8 @@ $cover_lama = $hasil['buku_cover'];
 
 // ambil data file yang diupload (jika ada)
 if (!empty($_FILES['cover']['tmp_name'])) {
-    $file        = $_FILES['cover']['tmp_name'];
-    $nama_file   = $_FILES['cover']['name'];
+    $file = $_FILES['cover']['tmp_name'];
+    $nama_file = $_FILES['cover']['name'];
     $destination = "cover/" . $nama_file;
 
     $cover_baru = $nama_file;
@@ -50,7 +50,7 @@ if ($hasil == true) {
         move_uploaded_file($file, $destination);
     }
 
-    header('Location: list-buku.php');
+    header('Location: buku');
 } else {
-    header('Location: tambah-buku.php');
+    header('Location: edit-buku');
 }
