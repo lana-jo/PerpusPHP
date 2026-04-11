@@ -58,7 +58,7 @@ include 'proses-list-pinjam-data.php';
         <div class="table-header">
           <span class="table-title">Data Peminjaman</span>
           <div class="table-actions">
-            <a href="pinjam-form.php" class="btn btn-tambah">
+            <a href="/pinjam-form" class="btn btn-tambah">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -111,12 +111,12 @@ include 'proses-list-pinjam-data.php';
               <td>
                 <div class="action-buttons">
                   <?php if (empty($pinjam['tgl_kembali'])) : ?>
-                  <a href="../modul_pengembalian/pengembalian.php?id_pinjam=<?php echo $pinjam['pinjam_id'] ?>" 
+                  <a href="kembalikan/<?= htmlspecialchars($pinjam['pinjam_id']) ?>"
                     class="btn btn-success" title="Klik untuk proses pengembalian">Kembali</a>
-                  <a href="edit-pinjam.php?id_pinjam=<?php echo $pinjam['pinjam_id']; ?>&status=<?php echo $status; ?>" 
+                      <a href="edit-pinjam/<?php echo $pinjam['pinjam_id']; ?>?status=<?php echo $status; ?>"
                     class="btn btn-edit">Edit</a>
                   <?php endif ?>
-                  <a href="proses-delete-pinjam.php?id_pinjam=<?php echo $pinjam['pinjam_id']; ?>&status=<?php echo $status; ?>&buku_id=<?php echo $pinjam['buku_id']; ?>" 
+                    <a href="/hapus-pinjam/<?php echo $pinjam['pinjam_id']; ?>?status=<?php echo $status; ?>&buku_id=<?php echo $pinjam['buku_id']; ?>"
                     onclick="return confirm('Anda yakin akan menghapus data?')" class="btn btn-hapus">Hapus</a>
                 </div>
               </td>

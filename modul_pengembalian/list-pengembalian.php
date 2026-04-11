@@ -77,7 +77,7 @@ include 'proses-list-pengembalian.php';
               <td class="text-center"><?php echo htmlspecialchars($kembali['tgl_kembali']) ?></td>
               <td>
                 <div class="action-buttons">
-                  <a href="delete-pengembalian.php?id_kembali=<?php echo $kembali['kembali_id'] ?>" 
+                  <a href="/hapus-pengembalian/<?php echo $kembali['kembali_id'] ?>"
                     onclick="return confirm('Anda yakin akan menghapus data?')" class="btn btn-hapus">Hapus</a>
                 </div>
               </td>

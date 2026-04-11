@@ -16,13 +16,13 @@ $tgl_jatuh_tempo = $_POST['tgl_jatuh_tempo'];
 // Validate dates
 if (empty($tgl_pinjam) || empty($tgl_jatuh_tempo)) {
     $_SESSION['messages'] = '<font color="red">Tanggal tidak boleh kosong!</font>';
-    header('Location: pinjam-form.php');
+    header('Location: pinjam-form');
     exit();
 }
 
 if ($tgl_jatuh_tempo < $tgl_pinjam) {
     $_SESSION['messages'] = '<font color="red">Tanggal jatuh tempo tidak boleh sebelum tanggal pinjam!</font>';
-    header('Location: pinjam-form.php');
+    header('Location: pinjam-form');
     exit();
 }
 
@@ -30,7 +30,7 @@ if ($tgl_jatuh_tempo < $tgl_pinjam) {
 $stok_buku = cek_stok($db, $buku);
 if ($stok_buku < 1) {
     $_SESSION['messages'] = '<font color="red">Stok buku sudah habis, proses peminjaman gagal!</font>';
-    header('Location: pinjam-form.php');
+    header('Location: pinjam-form');
     exit();
 }
 
@@ -41,10 +41,10 @@ $hasil = mysqli_stmt_execute($stmt);
 if ($hasil) {
     kurangi_stok($db, $buku);
     $_SESSION['messages'] = '<font color="green">Peminjaman sukses!</font>';
-    header('Location: pinjam-data.php');
+    header('Location: peminjaman');
 } else {
     $_SESSION['messages'] = '<font color="red">Peminjaman gagal, silakan coba lagi!</font>';
-    header('Location: pinjam-form.php');
+    header('Location: pinjam-form');
 }
 
 mysqli_stmt_close($stmt);

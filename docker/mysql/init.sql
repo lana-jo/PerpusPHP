@@ -66,10 +66,11 @@ CREATE TABLE pinjam
     status          ENUM('dipinjam','kembali')
         DEFAULT 'dipinjam',
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    deleted_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    deleted_at DATETIME DEFAULT NULL,
     INDEX
                     idx_buku (buku_id),
     INDEX           idx_anggota (anggota_id),
+    INDEX idx_deleted_at (deleted_at),
     CONSTRAINT fk_pinjam_buku
         FOREIGN KEY (buku_id)
             REFERENCES buku (buku_id)

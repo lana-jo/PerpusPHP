@@ -1,8 +1,9 @@
 <?php
+session_start();
 
-// ... ambil data dari database
 include 'proses-list-anggota.php';
-
+include '../function.php';
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +41,17 @@ include 'proses-list-anggota.php';
                     <span><?php echo htmlspecialchars($username); ?></span>
                 </div>
             </header>
-            
+            <?php if (!empty($_SESSION['error'])): ?>
+                <div class="alert alert-danger">
+                    <?= htmlspecialchars($_SESSION['error']) ?>
+                </div>
+                <?php unset($_SESSION['error']); endif; ?>
+
+            <?php if (!empty($_SESSION['success'])): ?>
+                <div class="alert alert-success">
+                    <?= htmlspecialchars($_SESSION['success']) ?>
+                </div>
+                <?php unset($_SESSION['success']); endif; ?>
             <div class="content-header">
                 <h2 class="content-title">Manajemen Data Anggota</h2>
                 <p class="content-subtitle">Kelola data pengunjung perpustakaan</p>
@@ -69,9 +80,9 @@ include 'proses-list-anggota.php';
                 <table class="data">
                     <thead>
                         <tr>
-                            <!-- <th>NIM</th> -->
+                             <th>NIM</th>
                             <th>Nama</th>
-                            <!-- <th>Semester</th> -->
+                             <th>Semester</th>
                             <th>Alamat</th>
                             <th>JK</th>
                             <th>No Telepon</th>
@@ -81,9 +92,9 @@ include 'proses-list-anggota.php';
                     <tbody>
                         <?php foreach ($data_anggota as $anggota) : ?>
                         <tr>
-                            <!-- <td><?php echo htmlspecialchars($anggota['nim']) ?></td> -->
+                             <td><?php echo htmlspecialchars($anggota['nim']) ?></td>
                             <td><?php echo htmlspecialchars($anggota['anggota_nama']) ?></td>
-                            <!-- <td class="text-center"><?php echo htmlspecialchars($anggota['semester']) ?></td> -->
+                             <td class="text-center"><?php echo htmlspecialchars($anggota['semester']) ?></td>
                             <td><?php echo htmlspecialchars($anggota['anggota_alamat']) ?></td>
                             <td class="text-center"><?php echo htmlspecialchars($anggota['anggota_jk']) ?></td>
                             <td><?php echo htmlspecialchars($anggota['anggota_telp']) ?></td>

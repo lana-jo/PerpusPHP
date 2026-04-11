@@ -50,9 +50,12 @@ function kurangi_stok($db, $buku_id)
 
 function tambah_stok($db, $buku_id)
 {
-    $q = "UPDATE buku SET buku_jumlah = buku_jumlah + 1 WHERE buku_id = $buku_id";
-    mysqli_query($db, $q);
+    $stmt = mysqli_prepare($db, "UPDATE buku SET buku_jumlah = buku_jumlah + 1 WHERE buku_id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $buku_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 }
+
 function countRecords($db, $table) {
     $result = mysqli_query($db, "SELECT COUNT(*) as total FROM `$table`");
     return mysqli_fetch_assoc($result)['total'];

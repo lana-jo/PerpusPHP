@@ -1047,3 +1047,12 @@ table.data td a.link:hover {
         flex: 1;
     }
 }
+.alert-error{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:12px 16px;
+    border-radius:8px;
+    margin-bottom:16px;
+    border:1px solid #fecaca;
+    font-size:14px;
+}

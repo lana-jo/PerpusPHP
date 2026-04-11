@@ -1,14 +1,14 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-    header('Location: ../login.php');
+    header('Location: ../login');
     exit();
 }
 
 include '../connection.php';
 
 // ambil artikel yang mau di edit
-$id_anggota = $_GET['id_anggota'];
+$id_anggota = $_GET['anggota_id'];
 $query = "SELECT * FROM anggota WHERE anggota_id = $id_anggota";
 $hasil = mysqli_query($db, $query);
 $data_anggota = mysqli_fetch_assoc($hasil);
@@ -28,44 +28,56 @@ $data_anggota = mysqli_fetch_assoc($hasil);
 <body>
     <div class="container">
         <?php include '../sidebar.php' ?>
-        
+
         <main class="content">
             <header class="main-header">
                 <h1 class="header-title">Edit Anggota</h1>
             </header>
-            
+
             <div class="content-header">
                 <h2 class="content-title">Edit Data Anggota</h2>
                 <p class="content-subtitle">Perbarui informasi anggota di bawah ini</p>
             </div>
-            
+            <?php if (isset($_GET['error'])): ?>
+                <?php if ($_GET['error'] === 'nim_duplikat'): ?>
+                    <div class="alert alert-danger">
+                        NIM <strong><?= htmlspecialchars($_GET['nim'] ?? '') ?></strong> sudah digunakan anggota lain.
+                    </div>
+                <?php elseif ($_GET['error'] === 'gagal'): ?>
+                    <div class="alert alert-danger">
+                        Gagal memperbarui data. Silakan coba lagi.
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
             <div class="form-card">
                 <h3 class="form-title">Informasi Anggota</h3>
-                <form method="post" action="proses-edit-anggota.php">
+                <form method="post" action="/proses-edit-anggota">
                     <input type="hidden" name="id_anggota" value="<?php echo $data_anggota['anggota_id']; ?>">
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label" for="nim">NIM</label>
-                            <input type="text" id="nim" name="nim" class="form-input" value="<?php echo htmlspecialchars($data_anggota['nim']); ?>" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="smt">Semester</label>
-                            <input type="text" id="smt" name="smt" class="form-input" value="<?php echo htmlspecialchars($data_anggota['semester']); ?>" required>
-                        </div>
+                    <div class="form-group">
+                        <label class="form-label" for="nim">NIM</label>
+                        <input
+                                placeholder="Masukkan NIM"
+                                type="text"
+                                id="nim"
+                                name="nim"
+                                class="form-input"
+                                pattern="[0-9]{6,15}"
+                                title="NIM harus berupa angka (6-15 digit)"
+                                value="<?php echo htmlspecialchars($data_anggota['nim']); ?>"
+                                required
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
                     </div>
-                    
                     <div class="form-group">
                         <label class="form-label" for="nama">Nama Lengkap</label>
                         <input type="text" id="nama" name="nama" class="form-input" value="<?php echo htmlspecialchars($data_anggota['anggota_nama']); ?>" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label class="form-label" for="alamat">Alamat</label>
                         <input type="text" id="alamat" name="alamat" class="form-input" value="<?php echo htmlspecialchars($data_anggota['anggota_alamat']); ?>" required>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="jk">Jenis Kelamin</label>
@@ -74,15 +86,38 @@ $data_anggota = mysqli_fetch_assoc($hasil);
                                 <option value="P" <?php echo ($data_anggota['anggota_jk'] == 'P') ? 'selected' : ''; ?>>Perempuan</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="form-label" for="no_telepon">No. Telepon</label>
-                            <input type="text" id="no_telepon" name="no_telepon" class="form-input" value="<?php echo htmlspecialchars($data_anggota['anggota_telp']); ?>" required>
+                            <input
+                                    type="tel"
+                                    id="no_telepon"
+                                    name="no_telepon"
+                                    class="form-input"
+                                    value="<?php echo htmlspecialchars($data_anggota['anggota_telp']); ?>"
+                                    pattern="[0-9]{10,15}"
+                                    title="Masukkan nomor telepon 10-15 digit angka"
+                                    required
+                            >
                         </div>
                     </div>
-                    
+
+                    <div class="form-group">
+                        <label class="form-label">Semester</label>
+                        <input
+                                placeholder="Masukkan Semester, Contoh: 5"
+                                type="number"
+                                name="semester"
+                                class="form-input"
+                                min="1"
+                                max="14"
+                                value="<?php echo htmlspecialchars($data_anggota['semester']); ?>"
+                                required
+                        >
+                    </div>
+
                     <div class="form-actions">
-                        <a href="list-anggota.php" class="btn" style="background: var(--gray-200); color: var(--gray-700);">Batal</a>
+                        <a href="/anggota" class="btn" style="background: var(--gray-200); color: var(--gray-700);">Batal</a>
                         <button type="submit" class="btn btn-primary">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>

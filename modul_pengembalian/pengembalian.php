@@ -350,7 +350,7 @@ $terlambat = $denda > 0;
         <?php endif; ?>
     </div>
 
-    <form method="post" action="proses-pengembalian.php">
+    <form method="post" action="/proses-pengembalian">
         <!-- Hidden fields -->
         <input type="hidden" name="pinjam_id" value="<?= htmlspecialchars($data['pinjam_id']) ?>">
         <input type="hidden" name="tgl_kembali" value="<?= htmlspecialchars($tgl_kembali) ?>">
@@ -371,6 +371,12 @@ $terlambat = $denda > 0;
                     <h2>Detail Transaksi</h2>
                     <p>ID Peminjaman #<?= htmlspecialchars($data['pinjam_id']) ?></p>
                 </div>
+                <?php
+                if (!empty($_SESSION['messages'])) {
+                    echo '<div class="alert alert-info">' . $_SESSION['messages'] . '</div>';
+                    unset($_SESSION['messages']);
+                }
+                ?>
             </div>
 
             <!-- Card body -->
@@ -421,7 +427,7 @@ $terlambat = $denda > 0;
 
             <!-- Card footer -->
             <div class="card-footer">
-                <a href="../modul_peminjaman/pinjam-data.php" class="btn-cancel">Batal</a>
+                <a href="/peminjaman" class="btn-cancel">Batal</a>
                 <button type="submit" class="btn-submit">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                          stroke-width="2">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-// ... jika belum login, alihkan ke halaman login
+
 if (!isset($_SESSION['user'])) {
     header('Location: ../login.php');
     exit();
@@ -9,26 +9,60 @@ if (!isset($_SESSION['user'])) {
 include '../connection.php';
 include '../function.php';
 
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+$pinjam_id = (int)$_POST['pinjam_id'];
 $tgl_kembali = $_POST['tgl_kembali'];
-$denda = $_POST['denda'];
-$pinjam_id = $_POST['pinjam_id'];
+$denda = (int)$_POST['denda'];
 
-$query = "INSERT INTO kembali (pinjam_id, tgl_kembali, denda) 
-    VALUES ($pinjam_id, '$tgl_kembali', $denda)";
+mysqli_begin_transaction($db);
 
-$hasil = mysqli_query($db, $query);
-if ($hasil == true) {
-    // ambil buku_id berdasarkan pinjam_id
-    $q = "SELECT buku.buku_id FROM buku JOIN pinjam ON buku.buku_id = pinjam.buku_id WHERE pinjam.pinjam_id = $pinjam_id";
-    $hasil = mysqli_query($db, $q);
-    $hasil = mysqli_fetch_assoc($hasil);
-    $buku_id = $hasil['buku_id'];
+try {
 
-    tambah_stok($db, $buku_id);
+    // cek status pinjam
+    $cekStatus = mysqli_prepare($db, "SELECT status,buku_id FROM pinjam WHERE pinjam_id=?");
+    mysqli_stmt_bind_param($cekStatus, 'i', $pinjam_id);
+    mysqli_stmt_execute($cekStatus);
+    mysqli_stmt_bind_result($cekStatus, $status, $buku_id);
+    mysqli_stmt_fetch($cekStatus);
+    mysqli_stmt_close($cekStatus);
+
+    if (!$buku_id) {
+        throw new Exception("Data peminjaman tidak ditemukan");
+    }
+
+    if ($status == 'kembali') {
+        throw new Exception("Buku sudah dikembalikan");
+    }
+
+
+    // insert pengembalian
+    $stmt = mysqli_prepare($db, "INSERT INTO kembali (pinjam_id,tgl_kembali,denda) VALUES (?,?,?)");
+    mysqli_stmt_bind_param($stmt, 'isi', $pinjam_id, $tgl_kembali, $denda);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+
     // tambah stok
+    tambah_stok($db, $buku_id);
+
+
+    // update status
+    $update = mysqli_prepare($db, "UPDATE pinjam SET status='kembali' WHERE pinjam_id=?");
+    mysqli_stmt_bind_param($update, 'i', $pinjam_id);
+    mysqli_stmt_execute($update);
+    mysqli_stmt_close($update);
+
+
+    mysqli_commit($db);
 
     $_SESSION['messages'] = '<font color="green">Pengembalian buku sukses!</font>';
-    header('Location: ../modul_peminjaman/pinjam-data.php');
-} else {
-    header('Location: pengembalian.php?id_pinjam=' . $pinjam_id);
+    header('Location: /peminjaman');
+
+} catch (Exception $e) {
+
+    mysqli_rollback($db);
+
+    $_SESSION['messages'] = '<font color="red">' . $e->getMessage() . '</font>';
+    header('Location: /kembalikan/' . $pinjam_id);
 }

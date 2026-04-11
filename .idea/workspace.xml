@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="daca57da-a786-4ca7-a96f-5ef5271adae4" name="Changes" comment="completed link">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/default.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modul_buku/cover/aws-re-start-graduate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/php/DockerFile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/php/DockerFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_anggota/delete-anggota.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_anggota/delete-anggota.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_anggota/edit-anggota.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_anggota/edit-anggota.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_anggota/list-anggota.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_anggota/list-anggota.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_anggota/proses-tambah-anggota.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_anggota/proses-tambah-anggota.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_anggota/tambah-anggota.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_anggota/tambah-anggota.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_buku/edit-buku.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_buku/edit-buku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_kategori/delete-kategori.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_kategori/delete-kategori.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_kategori/list-kategori.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_kategori/list-kategori.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_peminjaman/pinjam-data.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_peminjaman/pinjam-data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_peminjaman/pinjam-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_peminjaman/pinjam-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_peminjaman/proses-delete-pinjam.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_peminjaman/proses-delete-pinjam.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_peminjaman/proses-tambah-pinjam.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_peminjaman/proses-tambah-pinjam.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_pengembalian/list-pengembalian.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_pengembalian/list-pengembalian.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_pengembalian/pengembalian.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_pengembalian/pengembalian.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modul_pengembalian/proses-pengembalian.php" beforeDir="false" afterPath="$PROJECT_DIR$/modul_pengembalian/proses-pengembalian.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php8.2.0\php.exe" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3Am6dirdl4FHJH5CKVFE7Igyxa8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/laragon/www/PerpusPHP/docker&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\laragon\www\PerpusPHP\docker" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PS-241.14494.237" />
+        <option value="bundled-php-predefined-ba97393d7c68-8f0632a2a215-com.jetbrains.php.sharedIndexes-PS-241.14494.237" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="daca57da-a786-4ca7-a96f-5ef5271adae4" name="Changes" comment="" />
+      <created>1773185488565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773185488565</updated>
+      <workItem from="1773185490114" duration="8171000" />
+      <workItem from="1773506401914" duration="3658000" />
+      <workItem from="1773511071926" duration="15473000" />
+      <workItem from="1773550337059" duration="6717000" />
+      <workItem from="1773560832833" duration="4775000" />
+      <workItem from="1773637402387" duration="2169000" />
+      <workItem from="1773656185880" duration="2874000" />
+      <workItem from="1773662971302" duration="15874000" />
+      <workItem from="1773681596494" duration="17906000" />
+      <workItem from="1773729171264" duration="15795000" />
+      <workItem from="1773771612988" duration="17063000" />
+      <workItem from="1775874673753" duration="1261000" />
+    </task>
+    <task id="LOCAL-00001" summary="fix home.php (username)&#10;add details dashboard&#10;- danger-400 in css">
+      <option name="closed" value="true" />
+      <created>1773188631531</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773188631531</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix home.php (username)&#10;add details dashboard&#10;- danger-400 in css">
+      <option name="closed" value="true" />
+      <created>1773188656203</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773188656203</updated>
+    </task>
+    <task id="LOCAL-00003" summary="migration link modul_buku from without htaccess (apache) to use htaccess">
+      <option name="closed" value="true" />
+      <created>1773524177690</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773524177690</updated>
+    </task>
+    <task id="LOCAL-00004" summary="migration link modul_buku from without htaccess (apache) to use htaccess">
+      <option name="closed" value="true" />
+      <created>1773524231895</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773524231895</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new docker-compose.yml on root&#10;Rewrited default.conf, htaccess">
+      <option name="closed" value="true" />
+      <created>1773671200323</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773671200323</updated>
+    </task>
+    <task id="LOCAL-00006" summary="rewrite link">
+      <option name="closed" value="true" />
+      <created>1773679810135</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773679810135</updated>
+    </task>
+    <task id="LOCAL-00007" summary="rewrite link">
+      <option name="closed" value="true" />
+      <created>1773695152661</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1773695152662</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add table">
+      <option name="closed" value="true" />
+      <created>1773796928319</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773796928320</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add table">
+      <option name="closed" value="true" />
+      <created>1773796939434</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773796939434</updated>
+    </task>
+    <task id="LOCAL-00010" summary="completed link">
+      <option name="closed" value="true" />
+      <created>1773797041810</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773797041810</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="mobileview" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix home.php (username)&#10;add details dashboard" />
+    <MESSAGE value="fix home.php (username)&#10;add details dashboard&#10;- danger-400 in css" />
+    <MESSAGE value="home without hamburger bar if mobile size&#10;+upgrade logut" />
+    <MESSAGE value="migration link from without htaccess (apache) to use htaccess" />
+    <MESSAGE value="migration link modul_buku from without htaccess (apache) to use htaccess" />
+    <MESSAGE value="new docker-compose.yml on root&#10;Rewrited default.conf, htaccess" />
+    <MESSAGE value="rewrite link" />
+    <MESSAGE value="add table" />
+    <MESSAGE value="completed link" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed link" />
+  </component>
+</project>

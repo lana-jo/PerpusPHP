@@ -1,8 +1,9 @@
 <?php
+session_start();
 
 // ... ambil data dari database
 include 'proses-list-kategori.php';
-include '../function.php'
+include '../function.php';
 
 ?>
 <!DOCTYPE html>
@@ -41,12 +42,22 @@ include '../function.php'
                     <span><?php echo htmlspecialchars($username); ?></span>
                 </div>
             </header>
-
             <div class="content-header">
                 <h2 class="content-title">Manajemen Kategori Buku</h2>
                 <p class="content-subtitle">Kelola kategori koleksi perpustakaan</p>
             </div>
+            <?php
+            if (!empty($_SESSION['error'])): ?>
+                <div class="alert alert-danger">
+                    <?= htmlspecialchars($_SESSION['error']) ?>
+                </div>
+                <?php unset($_SESSION['error']); endif; ?>
 
+            <?php if (!empty($_SESSION['success'])): ?>
+                <div class="alert alert-success">
+                    <?= htmlspecialchars($_SESSION['success']) ?>
+                </div>
+                <?php unset($_SESSION['success']); endif; ?>
             <div class="table-container">
                 <div class="table-header">
                     <span class="table-title">Total Kategori: <?= countRecords($db, 'kategori') ?></span>
@@ -81,8 +92,11 @@ include '../function.php'
                             <td>
                                 <div class="action-buttons">
                                     <a href="edit-kategori/<?php echo $kategori['kategori_id']; ?>" class="btn btn-edit">Edit</a>
-                                    <a href="hapus-kategori/<?php echo $kategori['kategori_id']; ?>" class="btn btn-hapus"
-                                        onclick="return confirm('Anda yakin akan menghapus data?');">Hapus</a>
+                                    <a href="/hapus-kategori/<?php echo $kategori['kategori_id']; ?>"
+                                       class="btn btn-hapus"
+                                       onclick="return confirm('Anda yakin akan menghapus data?');">
+                                        Hapus
+                                    </a>
                                 </div>
                             </td>
                         </tr>

@@ -48,7 +48,7 @@ include '../modul_anggota/proses-list-anggota.php';
       
       <div class="form-card">
         <h3 class="form-title">Informasi Peminjaman</h3>
-        <form action="proses-tambah-pinjam.php" method="post">
+        <form action="proses-tambah-pinjam" method="post">
           <div class="form-group">
             <label class="form-label" for="buku">Buku</label>
             <select id="buku" name="buku" class="form-select" required>
@@ -82,7 +82,7 @@ include '../modul_anggota/proses-list-anggota.php';
           </div>
           
           <div class="form-actions">
-            <a href="pinjam-data.php" class="btn" style="background: var(--gray-200); color: var(--gray-700);">Batal</a>
+            <a href="/peminjaman" class="btn" style="background: var(--gray-200); color: var(--gray-700);">Batal</a>
             <button type="submit" class="btn btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -97,6 +97,18 @@ include '../modul_anggota/proses-list-anggota.php';
       </div>
     </main>
   </div>
+  <script>
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('tgl_pinjam').max = today;
+    document.getElementById('tgl_jatuh_tempo').min = today;
+    document.getElementById('tgl_pinjam').value = today;
+
+    // Jatuh tempo minimal = tanggal pinjam
+    document.getElementById('tgl_pinjam').addEventListener('change', function () {
+      document.getElementById('tgl_jatuh_tempo').min = this.value;
+    });
+  </script>
+</body>
 </body>
 
 </html>

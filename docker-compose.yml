@@ -1,3 +1,4 @@
+
 services:
 
   # ─── Nginx ────────────────────────────────────────────────────────────────
@@ -31,7 +32,7 @@ services:
 
   # ─── MySQL ────────────────────────────────────────────────────────────────
   mysql:
-    image: mysql:8.0
+    image: mysql:9.5.0
     container_name: db_perpus
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root123}
@@ -49,7 +50,7 @@ services:
 
   # ─── phpMyAdmin (opsional, untuk management DB) ───────────────────────────
   phpmyadmin:
-    image: phpmyadmin:latest
+    image: phpmyadmin:5.2.3
     container_name: perpus_phpmyadmin
     ports:
       - "8080:80"

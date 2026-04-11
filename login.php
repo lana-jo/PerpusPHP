@@ -4,7 +4,7 @@ session_start();
 
 // jika sudah login, alihkan ke halaman list
 if (isset($_SESSION['user'])) {
-	header('Location: home.php');
+	header('Location: dashboard');
 	exit();
 }
 
